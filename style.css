@@ -308,3 +308,79 @@ body:not(.auth-page) { overflow: hidden; }
 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* ── PRINT ───────────────────────────────────────────────────────────────── */
+@media print {
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: sans-serif;
+    overflow: auto !important;
+  }
+
+  .user-bar, .progress-bar, .bottom-bar,
+  .modal-overlay, .btn-icon, .ci-delete { display: none !important; }
+
+  .header {
+    background: #fff !important;
+    border-bottom: 2px solid #000 !important;
+    padding: 12px 0;
+  }
+  .logo { color: #000 !important; font-size: 18px; }
+  .logo span { color: #555 !important; }
+  .semana-badge {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+    color: #000 !important;
+  }
+  .semana-dates, .clock, .clock-date { color: #333 !important; }
+
+  .content {
+    height: auto !important;
+    overflow: visible !important;
+    padding: 16px 0;
+    gap: 6px;
+  }
+
+  .print-meta {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .checklist-item {
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    padding: 10px 14px !important;
+    break-inside: avoid;
+    opacity: 1 !important;
+  }
+  .checklist-item.done { opacity: 1 !important; }
+  .checklist-item.done .ci-text { text-decoration: none !important; color: #000 !important; }
+
+  .ci-check {
+    border: 2px solid #999 !important;
+    background: #fff !important;
+    border-radius: 4px !important;
+  }
+  .checklist-item.done .ci-check {
+    background: #3fb950 !important;
+    border-color: #3fb950 !important;
+  }
+  .ci-check svg { display: block !important; }
+  .ci-check svg path { stroke: #fff !important; }
+
+  .ci-text { color: #000 !important; font-size: 13px; }
+  .ci-tag { color: #555 !important; }
+
+  .req-ob      { background: #fff8e1 !important; color: #b8860b !important; border-color: #f0c040 !important; }
+  .req-rec     { background: #f5f5f5 !important; color: #555 !important; border-color: #ccc !important; }
+  .req-personal{ background: #e8f4ff !important; color: #1a73e8 !important; border-color: #90caf9 !important; }
+
+  .loading-msg, .empty-msg { display: none !important; }
+}

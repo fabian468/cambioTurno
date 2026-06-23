@@ -47,6 +47,26 @@ document.getElementById('btn-admin').addEventListener('click', () => {
   window.location.href = 'admin.html';
 });
 
+document.getElementById('btn-print').addEventListener('click', () => {
+  // Insertar meta de impresión
+  const container = document.getElementById('checklist');
+  const meta = document.createElement('div');
+  meta.className = 'print-meta';
+  meta.id = 'print-meta';
+  const nombre = userProfile.displayName || userProfile.username;
+  const fecha  = new Date().toLocaleDateString('es-CL', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+    hour: '2-digit', minute: '2-digit'
+  });
+  meta.textContent = `Operador: ${nombre}   ·   ${fecha}   ·   S–${String(getISOWeek(new Date())).padStart(2,'0')}`;
+  container.prepend(meta);
+
+  window.print();
+
+  // Limpiar meta después de imprimir
+  setTimeout(() => { meta.remove(); }, 500);
+});
+
 // ── Semana + reloj ────────────────────────────────────────────────────────
 function getISOWeek(d) {
   const date = new Date(d);

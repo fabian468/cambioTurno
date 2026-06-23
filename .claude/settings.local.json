@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find 'C:\\\\Users\\\\fabia\\\\OneDrive\\\\Escritorio\\\\entrega de turno' -type f -name *.json -o -name *.md -o -name Makefile -o -name *.toml -o -name *.yaml -o -name *.yml)",
+      "Bash(gh:*)"
+    ]
+  }
+}

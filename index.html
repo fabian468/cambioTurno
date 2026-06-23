@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NovasourceCommand — Acceso</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+  <div class="auth-container">
+    <div class="auth-logo">Novasource<span>Command</span></div>
+    <div class="auth-subtitle">Control de Turno</div>
+
+    <!-- LOGIN -->
+    <div id="view-login" class="auth-card">
+      <h2 class="auth-title">Iniciar sesión</h2>
+      <div class="form-group">
+        <label>Usuario</label>
+        <input type="text" id="login-user" placeholder="nombre.usuario" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <div class="auth-error" id="login-error"></div>
+      <button class="btn-auth" id="btn-login">INGRESAR</button>
+      <p class="auth-switch">¿No tienes cuenta? <a href="#" id="goto-register">Regístrate</a></p>
+    </div>
+
+    <!-- REGISTER -->
+    <div id="view-register" class="auth-card hidden">
+      <h2 class="auth-title">Crear cuenta</h2>
+      <div class="form-group">
+        <label>Usuario</label>
+        <input type="text" id="reg-user" placeholder="nombre.usuario" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" id="reg-pass" placeholder="Mínimo 6 caracteres" autocomplete="new-password">
+      </div>
+      <div class="form-group">
+        <label>Confirmar contraseña</label>
+        <input type="password" id="reg-pass2" placeholder="Repite la contraseña" autocomplete="new-password">
+      </div>
+      <div class="auth-error" id="reg-error"></div>
+      <button class="btn-auth" id="btn-register">CREAR CUENTA</button>
+      <p class="auth-switch">¿Ya tienes cuenta? <a href="#" id="goto-login">Inicia sesión</a></p>
+    </div>
+  </div>
+
+  <script type="module" src="auth.js"></script>
+</body>
+
+</html>

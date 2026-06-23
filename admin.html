@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NovasourceCommand — Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <div class="logo">Novasource<span>Command</span></div>
+    <div class="semana-row">
+      <span class="semana-badge" style="background:rgba(88,166,255,0.12);border-color:rgba(88,166,255,0.25);color:var(--info)">ADMIN</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="btn-icon" id="btn-back">← Volver</button>
+  </div>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" data-tab="items">Checklist</button>
+  <button class="tab" data-tab="users">Usuarios</button>
+  <button class="tab" data-tab="historial">Historial</button>
+</div>
+
+<!-- TAB: ITEMS -->
+<div class="tab-content active" id="tab-items">
+  <div class="admin-section">
+    <p class="section-title">Agregar ítem</p>
+    <div class="form-group">
+      <label>Descripción</label>
+      <input type="text" id="item-texto" placeholder="Ej: Verificar nivel de combustible">
+    </div>
+    <div class="form-row" style="margin-top:4px">
+      <div class="form-group">
+        <label style="display:flex;align-items:center;justify-content:space-between">
+          Categoría
+          <button class="btn-link" id="btn-open-categorias">+ Gestionar</button>
+        </label>
+        <select id="item-cat">
+          <option value="">Cargando...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Prioridad</label>
+        <select id="item-prio">
+          <option value="OBLIGATORIO">OBLIGATORIO</option>
+          <option value="RECOMENDADO">RECOMENDADO</option>
+        </select>
+      </div>
+    </div>
+    <div class="auth-error" id="item-error" style="margin-top:4px"></div>
+    <button class="btn-admin-add" id="btn-add-item" style="margin-top:8px">+ Agregar ítem</button>
+  </div>
+
+  <div class="admin-list" id="items-list">
+    <div class="loading-msg">Cargando...</div>
+  </div>
+</div>
+
+<!-- TAB: USERS -->
+<div class="tab-content" id="tab-users">
+  <div class="admin-list" id="users-list" style="padding-top:16px">
+    <div class="loading-msg">Cargando...</div>
+  </div>
+</div>
+
+<!-- TAB: HISTORIAL -->
+<div class="tab-content" id="tab-historial">
+  <div class="admin-list" id="historial-list" style="padding-top:16px">
+    <div class="loading-msg">Cargando...</div>
+  </div>
+</div>
+
+<!-- MODAL: CATEGORÍAS -->
+<div class="modal-overlay hidden" id="modal-categorias">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Gestionar categorías</span>
+      <button class="modal-close" id="btn-close-modal">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Nueva categoría</label>
+        <div class="input-row">
+          <input type="text" id="nueva-categoria" placeholder="Ej: Eléctrico">
+          <button class="btn-modal-add" id="btn-add-categoria">Agregar</button>
+        </div>
+        <div class="auth-error" id="cat-error"></div>
+      </div>
+      <div class="modal-list" id="categorias-list">
+        <div class="loading-msg">Cargando...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NovasourceCommand</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <div class="logo">Novasource<span>Command</span></div>
+    <div class="semana-row">
+      <span class="semana-badge" id="semana-badge">S––</span>
+      <span class="semana-dates" id="semana-dates">--</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div>
+      <div class="clock" id="clock">--:--</div>
+      <div class="clock-date" id="clock-date">--</div>
+    </div>
+  </div>
+</header>
+
+<!-- USER BAR -->
+<div class="user-bar">
+  <div class="user-info">
+    <div class="user-dot"></div>
+    <span id="user-name">--</span>
+  </div>
+  <div class="user-actions">
+    <button class="btn-icon admin hidden" id="btn-admin">⚙ Admin</button>
+    <button class="btn-icon" id="btn-logout">Salir</button>
+  </div>
+</div>
+
+<!-- PROGRESO -->
+<div class="progress-bar">
+  <div class="progress-top">
+    <span class="progress-label">Checklist de cierre</span>
+    <span class="progress-count" id="prog-count">0 / 0</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="prog-fill" style="width: 0%"></div>
+  </div>
+</div>
+
+<!-- CHECKLIST -->
+<div class="content" id="checklist">
+  <div class="loading-msg">Cargando checklist...</div>
+</div>
+
+<!-- BOTTOM -->
+<div class="bottom-bar">
+  <button class="btn-confirm" id="btn-confirm">CONFIRMAR TRASPASO</button>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

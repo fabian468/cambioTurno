@@ -1,7 +1,7 @@
 import { auth, db } from './firebase-config.js';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import {
-  collection, query, orderBy, onSnapshot,
+  collection, query, where, orderBy, onSnapshot,
   addDoc, deleteDoc, doc, getDoc, serverTimestamp
 } from 'firebase/firestore';
 
@@ -98,12 +98,11 @@ function initChecklist() {
 function initPersonalItems() {
   const q = query(
     collection(db, 'personal_items'),
+    where('uid', '==', currentUser.uid),
     orderBy('createdAt')
   );
   onSnapshot(q, snap => {
-    personalItems = snap.docs
-      .map(d => ({ id: d.id, tipo: 'personal', ...d.data() }))
-      .filter(i => i.uid === currentUser.uid);
+    personalItems = snap.docs.map(d => ({ id: d.id, tipo: 'personal', ...d.data() }));
     renderChecklist();
   });
 }

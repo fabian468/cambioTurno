@@ -32,6 +32,7 @@
     <span id="user-name">--</span>
   </div>
   <div class="user-actions">
+    <button class="btn-icon" id="btn-personal">+ Personal</button>
     <button class="btn-icon admin hidden" id="btn-admin">⚙ Admin</button>
     <button class="btn-icon" id="btn-logout">Salir</button>
   </div>
@@ -56,6 +57,24 @@
 <!-- BOTTOM -->
 <div class="bottom-bar">
   <button class="btn-confirm" id="btn-confirm">CONFIRMAR TRASPASO</button>
+</div>
+
+<!-- MODAL: ÍTEM PERSONAL -->
+<div class="modal-overlay hidden" id="modal-personal">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">Agregar ítem personal</span>
+      <button class="modal-close" id="btn-close-personal">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Descripción</label>
+        <input type="text" id="personal-texto" placeholder="Ej: Revisar estado generador 3">
+      </div>
+      <div class="auth-error" id="personal-error"></div>
+      <button class="btn-auth" id="btn-add-personal">AGREGAR</button>
+    </div>
+  </div>
 </div>
 
 <script type="module" src="app.js"></script>

@@ -119,6 +119,14 @@ body:not(.auth-page) { overflow: hidden; }
 .ci-required { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; padding: 1px 5px; border-radius: 2px; }
 .req-ob  { background: rgba(240,180,41,0.1); color: var(--accent); border: 1px solid rgba(240,180,41,0.2); }
 .req-rec { background: rgba(139,148,158,0.1); color: var(--muted); border: 1px solid var(--border2); }
+.req-personal { background: rgba(88,166,255,0.1); color: var(--info); border: 1px solid rgba(88,166,255,0.25); }
+
+.ci-delete {
+  background: none; border: none; cursor: pointer;
+  color: var(--border2); font-size: 16px; padding: 0 2px;
+  flex-shrink: 0; transition: color 0.15s; line-height: 1;
+}
+.ci-delete:hover { color: var(--danger); }
 
 /* ── BOTTOM BAR ──────────────────────────────────────────────────────────── */
 .bottom-bar {

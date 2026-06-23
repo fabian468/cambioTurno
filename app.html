@@ -89,6 +89,33 @@
   </div>
 </div>
 
+<!-- MODAL: COMENTARIOS -->
+<div class="modal-overlay hidden" id="modal-comentarios">
+  <div class="modal modal-tall">
+    <div class="modal-header">
+      <span class="modal-title" id="comentarios-titulo">Comentarios</span>
+      <button class="modal-close" id="btn-close-comentarios">✕</button>
+    </div>
+
+    <!-- Tabs Global / Personal -->
+    <div class="tabs" style="border-top:none">
+      <button class="tab active" data-ctab="global">Global</button>
+      <button class="tab" data-ctab="personal">Personal</button>
+    </div>
+
+    <!-- Lista comentarios -->
+    <div class="comentarios-list" id="comentarios-list">
+      <div class="loading-msg">Cargando...</div>
+    </div>
+
+    <!-- Input nuevo comentario -->
+    <div class="comentarios-input">
+      <input type="text" id="comentario-texto" placeholder="Escribe un comentario...">
+      <button class="btn-send" id="btn-send-comentario">↑</button>
+    </div>
+  </div>
+</div>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>

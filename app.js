@@ -45,8 +45,8 @@ onAuthStateChanged(auth, async user => {
   setTimeout(() => {
     const splash = document.getElementById('splash');
     splash.classList.add('fade-out');
-    setTimeout(() => splash.remove(), 500);
-  }, 1200);
+    setTimeout(() => splash.remove(), 400);
+  }, 500);
 });
 
 document.getElementById('btn-logout').addEventListener('click', () => signOut(auth));

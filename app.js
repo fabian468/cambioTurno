@@ -40,6 +40,13 @@ onAuthStateChanged(auth, async user => {
 
   initChecklist();
   initPersonalItems();
+
+  // Ocultar splash con fade
+  setTimeout(() => {
+    const splash = document.getElementById('splash');
+    splash.classList.add('fade-out');
+    setTimeout(() => splash.remove(), 500);
+  }, 1200);
 });
 
 document.getElementById('btn-logout').addEventListener('click', () => signOut(auth));

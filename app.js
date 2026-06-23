@@ -98,8 +98,7 @@ function initChecklist() {
 function initPersonalItems() {
   const q = query(
     collection(db, 'personal_items'),
-    where('uid', '==', currentUser.uid),
-    orderBy('createdAt')
+    where('uid', '==', currentUser.uid)
   );
   onSnapshot(q, snap => {
     personalItems = snap.docs.map(d => ({ id: d.id, tipo: 'personal', ...d.data() }));
